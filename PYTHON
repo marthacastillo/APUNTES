@@ -26,10 +26,37 @@ yeald no se calcula en memoria, es como un return
  tiene 2 mneras de deginir fucniones lambda y def
  la lambda se usa cuando 
  a funcion es bastante simple----
- 
+
+ #AlEATORIDAD
+ *ALL
+ ^NEGACION
+ \S no ESPACIO EN BLANCO \t\n\r\f
+ \s espacio 
+ \W concuerada con culquie
+
+
+ >>> import re
+>>> p= re.compile('[0-9]')
+>>> p.match('10)
+  File "<stdin>", line 1
+    p.match('10)
+               ^
+SyntaxError: EOL while scanning string literal
+>>> p.match('10')
+<_sre.SRE_Match object; span=(0, 1), match='1'>
+lo que devuelve es un match en 1 i encintro una coincidencia
 
 
 
 
 
 
+
+
+
+# HERENCIA
+isinstace(), pregunta si esa  clase es insintancia
+
+#Comprehesions
+mult = [i for i in range(30) if i %3 == 0]
+sq = [x**2 for x in range(10)]

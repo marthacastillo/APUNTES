@@ -1,0 +1,14 @@
+#CORRER Y DESCRAGAR EL CONTENEDOR 
+docker run -p 2181:2181 -p 9092:9092 --env ADVERTISED_HOST=localhost --env ADVERTISED_PORT=9092 spotify/kafka
+docker run -p 2181:2181 -p 9092:9092 --name martha-kafka --env ADVERTISED_HOST=localhost --env ADVERTISED_PORT=9092 spotify/kafka
+#DESCRIBIR EL TOPICO
+./kafka-topics.sh --describe --zookeeper 172.17.0.2:2181 --topic test
+
+
+##INICIAR UN PRODUCTOR
+./kafka-console-producer.sh --broker-list 172.17.0.2:9092 --topic test
+
+## INICIAR UN CONSUMIDO
+./kafka-console-consumer.sh --zookeeper 172.17.0.2:2181 --topic test --from-beginning
+
+
