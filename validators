@@ -1,0 +1,83 @@
+db.runCommand({
+collMod:"students",
+validator: {$and:
+[
+{"name":{$type:"string", $exists:true} },
+{"age": {$type: "number", $gte:0, $exists:true} },
+{"dir": {$type:"string",  $exists:true}},
+{"colors": {$type:"string",$exists:true}},
+{"accounts": {$type: "number",$gt:0,$exists:true}},
+{"pets.name": {$type:"string",$exists:true}},
+{"pets.especie": {$type:"string",$exists:true}},
+{"pets.raza": {$type:"string",$exists:true}},
+{"pets.age": {$type: "number",$gt:0,$exists:true}}
+]
+	
+		   },
+validationLevel:"moderate",
+validationAction:"warn"
+
+})
+db.students.insert(
+{name:'Lana',
+age:0,
+dir:'CALLE OCAMPO NO 14',
+colors:['golden','viloet','brown','pink','green'],
+accounts:[1,4,6,3,10],
+pets:[
+{
+name:'goku',
+especie:'dog',
+raza:'doberman',
+age:-3
+}]})
+
+db.students.update({_id: ObjectId("")},{$set:{accounts:['1','2']}})
+ 
+////LOGS
+
+db.adminCommand({getLog: "global" })
+
+
+///////
+db.runCommand({
+	collMod:"users",
+	validator:{$and:
+	[
+		{"_id":{$type:"number",$gt:0}},
+		{"name":{$type:"string",$exists:true}},
+		{"age":{$type:"number",$gt:0,$exists:true}},
+		{"type":{$type:"number",$gt:0,$exists:true}},
+		{"status":{$regex:/^[A-Z]{1}$/, $exists:true}},
+		{"favorites.artist":{$type:"string", $exists:true}},
+		{"favorites.food":{$type:"string", $exists:true}},
+		{"finished":{$type:"number", $exists:true, $gt:0}},
+		{"badges":{$type:"string", $exists:true}},
+		{"points.points":{$type:"number",$gte:0,$exists:true}},
+		{"points.bonus":{$type:"number",$gte:0,$exists:true}}
+	]
+
+	 },
+	 validationLevel:"strict",
+	validationAction:"error"
+})
+db.users.insert(
+{
+       _id: 111,
+       name: "Lenardo",
+       age: 0,
+       type: 2,
+       status: "A",
+       favorites: { artist: "The Whekend", food: "tacos" },
+       finished: [ 18, 12 ],
+       badges: [ "black", "blue", "red", "green", "magenta" ],
+       points: [
+          { points: 78, bonus: 8 },
+          { points: 57, bonus: 7 },
+          { points: 67, bonus: 9 },
+          { points: 87, bonus: 10 },
+          { points: 97, bonus: 20 }
+       ]
+     }
+ ) 
+ db.users.update({_id:111},{$set:{age:'e'}})

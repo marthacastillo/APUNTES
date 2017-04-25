@@ -1,0 +1,2 @@
+LISTA CADA COLOR Y CUANTOS USUARIOS LES GUSTA  DICHO COLOR MOSTRANDO DE MANERA DESCENDENTE
+db.users.aggregate([{$project:{name:1,badges:1,_id:0,name:1}},{$unwind:"$badges"},{$group:{_id:"$badges",totalBadges:{$sum:1}}},{$sort:{totalBadges:-1}}])

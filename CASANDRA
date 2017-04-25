@@ -1,0 +1,188 @@
+CASANDRA
+
+sudo docker pull cassandra
+sudo docker run -it --name mikasa -p 9042:9042 -d cassandra
+sudo docker run -it --link martha-cass:cassandra --rm cassandra sh -c 'exec cqlsh "$CASSANDRA_PORT_9042_TCP_ADDR"'
+sudo docker run -it --link mikasa:cassandra --rm cassandra sh -c 'exec cqlsh "34.207.214.33"'
+
+
+###
+COMANDOS
+Describe Keyspaces; 
+Describe tables;
+##
+
+PRIMARY KEY-> PARTICTION KEY ,  VELOCIDAD DE ESCRIURA , MÁS QUE LECTURA
+
+VARCHAR VS TEXT= ES LO MISMO QUE VARCHAR 
+
+MAPA= LLAVE, VALOR, PUEDE SER UN ARARGLO
+SET= CONJUNTO ORDENADO ELLEMNTOS  DEFULT ASC{}## #UNIQUE SORTED
+
+LIST= NO ES ORDENA, LOS VALORES  SE PUEDEN REPETIR COLECCIONES DENTO DELA TBLCUANADO NO CRECE TANTO LA TABLA []# #NON UNIQUE
+FROZEN= NO PERMITE MODIIFICAR LOS ELEMENTOS DE L DERECHA
+TRVEL= TIPO DE VARIABLE 
+
+
+
+SE PUEDE CREAR  VARIABLES EN CASADRA
+ TYPE
+CREATE TYPE TRAVEL()
+
+
+PARTITION KEY ES LA DISTRIUCION DE LOS ROW EN LOS NODOS 
+
+
+UPSERT 
+INSERT  IF NOT EXIST PRA QUE SE COMPORTE DE ACUEDO AUN INSERT 
+	 SI NO EXISTE LO CREA SI YA EXISTE HACE UN UPDATE
+
+UPDATE IF EXIST SE COMPORTA COMO UN UPDATE
+SELECT ~ WHERE [PRYMRY KEY SECONDARY INDEX]
+
+
+USING TTL 10 -> ESTÁ EN SEGUNDOS
+
+
+BEGIN BATCH
+APPLY BATCH;
+
+MONGO, EN ELASTIC VER COMO DEFINIR EL TTL ---LUNES 
+
+
+create KEYSPACE kyspace_mlcr  with replication = {'class' :'SimpleStrategy' , 'replication_factor':1};
+
+use kyspace_mlcr;
+DROP TABLE <tablename>
+create type pets(
+namep text,
+especie text,
+raza text,
+age int
+
+);
+
+create table students(
+id varchar PRIMARY KEY,
+name text,
+age int,
+dir text,
+colors set<text>,
+accounts set<int>,
+mascota map<int,frozen<pets>>
+);
+
+insert into students(id,name,age,dir,colors,accounts,mascota) values('stdn1','Leonardo',21,'CALLE AGUSTIN LARA NO. 69-B',{'red','blue','gray','pink'},{1,2,3,4},
+{1:{namep:'cooper',especie:'cat',raza:'pit bull',age:2}}) USING TTL 604800;
+
+
+insert into students(id,name,age,dir,colors,accounts,mascota) values('stdn2','Leonor',24,'OTE 6 #293 EDO MEX ',{'red','green','yellow','black'},{5,6,7,8,9},
+{1:{namep:'becky',especie:'dog',raza:'pug',age:1}}) USING TTL 604800;
+
+
+
+insert into students(id,name,age,dir,colors,accounts,mascota) values('stdn3','Aicia',20,'AV. INDEPENDENCIA NO. 241',{'silver','green','brown','black'},{10,11,13,12},
+{1:{namep:'canela',especie:'cat',raza:'bengali',age:3}}) USING TTL 604800;
+
+insert into students(id,name,age,dir,colors,accounts,mascota) values('stdn4','Skyler',24,'AV. 20 DE NOVIEMBRE NO.102',{'golden','violet','brown','black'},{1,4,8,9},
+{1:{namep:'tastie',especie:'dog',raza:'beagle',age:2}}) USING TTL 604800;
+
+
+insert into students(id,name,age,dir,colors,accounts,mascota) values('stdn5','Selena',20,'VD. BENITO JUAREZ NO. 1466-A',{'golden','violet','brown','black'},{1,4,8,9,3},
+{1:{namep:'youcan',especie:'cat',raza:'ameriacan curl',age:6}}) USING TTL 604800;
+
+
+insert into students(id,name,age,dir,colors,accounts,mascota) values('stdn6','Erandeni',22,'VD. BENITO JUAREZ NO. 1466-A',{'golden','violet','brown','pink'},{1,4,6,5,3},
+{1:{namep:'blue',especie:'cat',raza:'ameriacan curl',age:6}}) USING TTL 604800;
+
+insert into students(id,name,age,dir,colors,accounts,mascota) values('stdn6','Javier',22,'CALLE OCAMPO NO 14',{'golden','violet','brown','pink'},{1,4,6,3,9},
+{1:{namep:'daisy',especie:'cat',raza:'angora turco',age:1}}) USING TTL 604800;
+
+
+
+insert into students(id,name,age,dir,colors,accounts,mascota) values('stdn7','Isacc',26,'CALLE OCAMPO NO 14',{'golden','violet','brown','pink','green'},{1,4,6,3,10},
+{1:{namep:'goku',especie:'dog',raza:'doberman',age:3}}) USING TTL 604800;
+
+
+insert into students(id,name,age,dir,colors,accounts,mascota) values('stdn8','Alberto',26,'BLVD. BENITO JUAREZ ESQ. 20 DE NOVIEMBRE S/N',{'golden','violet','brown','black'},{1,4,2,3,10},
+{1:{namep:'ayka',especie:'cat',raza:'bombay',age:2}}) USING TTL 604800;
+
+insert into students(id,name,age,dir,colors,accounts,mascota) values('stdn9','Jose',26,'AV. INDEPENDENCIA NO 145',{'golden','violet','green','black'},{1,4,2,3,1},
+{1:{namep:'abba',especie:'dog',raza:'chow chow',age:1}}) USING TTL 604800;
+
+
+insert into students(id,name,age,dir,colors,accounts,mascota) values('stdn10','Mariel',26,'AV. INDEPENDENCIA NO 145',{'golden','violet','green','black'},{1,4,2,3,1},
+{1:{namep:'ab',especie:'dog',raza:'chow chow',age:4}}) USING TTL 604800;
+
+
+
+create type points(points int, bonus int);
+
+create table users (
+id int PRIMARY KEY,
+name text,
+age int,
+type int,
+status text,
+favorites map<text, text>,
+finished set<int>,
+badges set<text>,
+puntos map<int,frozen<points>>
+);
+
+insert into users(id,name,age,type,status,favorites,finished,badges,puntos) values(1,'sue',19,1,'P',{'artist':'Picasso','food':'pizza'},{17,3},{'blue','black'},{1:{points:85,bonus:10}})USING TTL 604800;
+
+
+
+
+
+insert into users(id,name,age,type,status,favorites,finished,badges,puntos) values(2,'bob',42,1,'A',{'artist':'Miro','food':'meringue'},{11, 25},{'green'},{1:{points:85,bonus:20},2:{points:64,bonus:12}})USING TTL 604800;
+
+
+insert into users(id,name,age,type,status,favorites,finished,badges,puntos) values(3,'ahn',22,2,'A',{'artist':'Cassatt','food':'cake'},{6},{'blue','red'},{1:{points:81,bonus:8},2:{points:55,bonus:20}})USING TTL 604800;
+
+insert into users(id,name,age,type,status,favorites,finished,badges,puntos) values(4,'xi',34,2,'D',{'artist':'Chagall','food':'chocolate'},{5,11},{'red','black'},{1:{points:53,bonus:15},2:{points:51,bonus:15}})USING TTL 604800;
+
+
+
+insert into users(id,name,age,type,status,favorites,finished,badges,puntos) values(5,'xyz',23,2,'D',{'artist':'Noguchi','food':'nougat'},{14,6},{'orange'},{1:{points:71,bonus:20}})USING TTL 604800;
+
+
+insert into users(id,name,age,type,status,favorites,finished,badges,puntos) values(6,'abc',43,1,'A',{'artist':'Picasso','food':'pizza'},{18,12},{'black','blue'},{1:{points:78,bonus:8},2:{points:57,bonus:7}})USING TTL 604800;
+
+
+
+
+
+
+
+insert into users(id,name,age,type,status,favorites,finished,badges,puntos) values(7,'Martha',23,1,'B',{'artist':'Leonardo','food':'tacos'},{18,12},{'black','blue','yellow','orange','silver'},{1:{points:78,bonus:8},2:{points:57,bonus:7},3:{points:67,bonus:9},4:{points:87,bonus:10},5:{points:97,bonus:20}})USING TTL 604800;
+
+
+
+insert into users(id,name,age,type,status,favorites,finished,badges,puntos) values(8,'Carlos',34,1,'A',{'artist':'Diego Rivera','food':'chips'},{18,12},{'black','blue','white','gray','navy blue'},{1:{points:78,bonus:8},2:{points:57,bonus:7},3:{points:67,bonus:9},4:{points:87,bonus:10},5:{points:97,bonus:20}})USING TTL 604800;
+
+insert into users(id,name,age,type,status,favorites,finished,badges,puntos) values(9,'Maria',28,2,'D',{'artist':'Picasso','food':'enchiladas'},{18,12},{'black','blue','orange','fucsia','pink'},{1:{points:78,bonus:8},2:{points:57,bonus:7},3:{points:67,bonus:9},4:{points:87,bonus:10},5:{points:97,bonus:20}})USING TTL 604800;
+
+
+
+
+insert into users(id,name,age,type,status,favorites,finished,badges,puntos) values(10,'Leonardo',50,2,'B',{'artist':'The Weekwend','food':'tacos'},{18,12},{'black','blue','red','green','magenta'},{1:{points:78,bonus:8},2:{points:57,bonus:7},3:{points:67,bonus:9},4:{points:87,bonus:10},5:{points:97,bonus:20}})USING TTL 604800;
+
+insert into users(id,name,age,type,status,favorites,finished,badges,puntos) values(11,'Mari',19,2,'J',{'artist':'Leon','food':'tacos'},{18,12},{'blue','black','orange','blue','pink'},{1:{points:85,bonus:20},2:{points:80,bonus:15},3:{points:75,bonus:10},4:{points:65,bonus:9},5:{points:97,bonus:20}})USING TTL 604800;
+
+
+insert into users(id,name,age,type,status,favorites,finished,badges,puntos) values(12,'Javier',21,2,'C',{'artist':'Alfredo','food':'Hog-Dogs'},{11,25},{'green','blue','brown','fucia'},{1:{points:85,bonus:20},2:{points:80,bonus:15},3:{points:75,bonus:10},4:{points:65,bonus:12},5:{points:55,bonus:9}})USING TTL 604800;
+
+
+insert into users(id,name,age,type,status,favorites,finished,badges,puntos) values(13,'Ismael',21,2,'C',{'artist':'Diego','food':'chips'},{6},{'blue','red','yellow','pink','navy blue'},{1:{points:85,bonus:20},2:{points:80,bonus:15},3:{points:75,bonus:10},4:{points:65,bonus:12},5:{points:55,bonus:9}})USING TTL 604800;
+
+
+insert into users(id,name,age,type,status,favorites,finished,badges,puntos) values(14,'Oscar',44,3,'F',{'artist':'Porta','food':'chocolate'},{6},{'red','black','gray','pink','magenta'},{1:{points:85,bonus:20},2:{points:80,bonus:15},3:{points:75,bonus:10},4:{points:65,bonus:12},5:{points:55,bonus:9}})USING TTL 604800;
+
+
+
+insert into users(id,name,age,type,status,favorites,finished,badges,puntos) values(15,'Gaby',23,2,'D',{'artist':'Paquita','food':'Nugets'},{14,6},{'orange','silver','golden','pink','red'},{1:{points:85,bonus:20},2:{points:80,bonus:15},3:{points:75,bonus:10},4:{points:65,bonus:12},5:{points:55,bonus:9}})USING TTL 604800;
+
+
+insert into users(id,name,age,type,status,favorites,finished,badges,puntos) values(16,'Amalia',43,1,'A',{'artist':'Luis Miguel','food':'Nugets'},{18,12},{'black','blue','orange','silver','red'},{1:{points:85,bonus:20},2:{points:80,bonus:15},3:{points:75,bonus:10},4:{points:65,bonus:12},5:{points:55,bonus:9}})USING TTL 604800;

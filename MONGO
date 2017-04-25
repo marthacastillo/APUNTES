@@ -1,0 +1,91 @@
+MONGO
+#Puerto
+27017#VER QUE ESTE ESCUCHANDO
+
+
+##DOCKER
+
+docker run -it --link some-mongo:mongo --rm mongo sh -c 'exec mongo "$MONGO_PORT_27017_TCP_ADDR:$MONGO_PORT_27017_TCP_PORT/test"'
+
+net stat -nap | grep LISTEN #CREAR BASE
+use mybase
+db.mycoll.find({})
+db.mycollection.insert({field:'value'})
+db.mycollection.find({})#MAYOR O IGUAL A 20 ... GTE ...LT,LTE,GT,EQ
+db.usuarios.find({age:{$gte:20}})
+#BUSQUEDA CON Y
+db.usuarios.find({$and:[age:{$gte:20}}, {status:'z'}]})
+ó con coma
+db.usuarios.find({age:{$gte:20},status:'a'})#BUSQUEDA CON OR
+db.usuarios.find({$or:[age:{$gte:20}}, {status:'z'}]})#OrDER BY
+db.usuarios.find({age:{$gte:18}},{_id:0}).sort({age:-1})#LIMIT
+db.usuarios.find({age:{$gte:18}},{_id:0}).sort({age:-1}).limit(3)#VER LA BASE EN LA QUE ESTAS
+db.getName()#QUE EL CAMPO EXISTA
+db.inventory.find({ar:{$exists:false}},{ar:1,_id:0})
+#BANDERA TYPE
+DB.COLLECTION.FIND({FIELD:{$TYPE:'DOUBLE'}})
+DB.COLLECTION.FIND({FIELD:{$TYPE:'STRING'}})#BANDERA EXISTS
+db.inventory.find({ar:{$exists:true}},{ar:1,_id:0})#BANDERA SLICE ... Una parte del arreglo
+db.inventory.find({ar:{$exists:true}},{ar:{$slice:1},_id:0})
+db.inventory.find({ar:{$exists:true}},{ar:{$slice:[2,1]},_id:0}) --> Posición 2, el                             siguiente caracter,los arreglos empiezan en 0
+db.inventory.find({ar:{$exists:true}},{ar:{$slice:[0,1]},_id:0}) --> Posición 0, un número#BADERA IN
+db.inventory.find({qty:{$in:[100]}})
+db.inventory.find({qty:{$in:[100,75,21]}})
+#MAYOR A 20 MENOS O IGUAL A 100
+db.inventory.find({qty:{$gt:20, $lte:100}})
+#QUE NO ESTEN ESAS CANTIDADES EN QTY (not in)
+db.inventory.find({qty:{$nin:[100,75,21]}})#BANDERA ALL ... Todos los elementos deben existir en el arreglo
+db.inventory.find({ar:{$exists:true, $all:[7,6,1]}},{ar:1},_id:0})#BANDERA ELEMMATCH para que al menos uno de los elementos cumpla la condición
+db.inventory.find({ar:{$exists:true, $elemMatch:{$gte:4,$lte:7}}},{ar:1},_id:0})#BANDERA SIZE ... Tamaño del arreglo, por numero de elementos
+db.inventory.find({ar:{$exists:true, $size:3}},{ar:1},_id:0})
+ó
+db.inventory.find({$or:{ar:{$exists:true, $size:3}},{ar:1},_id:0})
+
+---000-----
+db.users.aggregate([{$proyect:{name:1,type:1}}])
+db.users.aggregate([{$match:{type:1}}])
+db.users.aggregate([{$match:{type:1}},{$project:{name:1,type:1}}])
+limit
+db.users.aggregate([{$match:{type:1}},{$project:{name:1,type:1,_id:0,favorites:1,points:1}},{$limit:2}])
+saltar 
+db.users.aggregate([{$match:{type:1}},{$project:{name:1,type:1,_id:0,favorites:1,points:1}},{$limit:2},{$skip:1}])
+
+
+descglozar un aareglo en dos documentos
+
+db.users.aggregate([{$match:{type:1}},{$project:{name:1,type:1,_id:0,favorites:1,points:1}},{$unwind:"$points"}])
+
+
+sort si lo ocupamos es ponerlos se car del match 
+se enslista los campos conformae los quiero oredenar, cómo un tipo filtro 
+
+gropup
+nuevo documento el id a que campo va ser 
+
+
+db.users.aggregate([{$match:{type:1}},{$project:{name:1,type:1,_id:0,favorites:1,points:1}},{$unwind:"$points"},{$group:{_id:"$name",promPuntos:{$avg:"$points.points"}}}])
+
+debe de ir el unwind para que separe el arreglo en docmentos 
+
+agrupar por nombre
+> db.users.aggregate([{$project:{name:1,badges:1,points:1,_id:0}},{$unwind:"$points"},{$unwind:"$badges"},{$group:{_id:"$name",sumBonus:{$sum:"$points.bonus"}}}])
+
+SIEMPRE DEBE DE ESTAR AL FINAL A DIFERENCIA DE OUTPOTS
+
+OUTOPUT REDIRECCIONA LA SALIDA DE UN STAGE A UNA COLLECTIONS, SIONO ESTA LA CREA Y SI YA ESTA SOLO LA ADICIONA
+COMO UN APPEND
+
+
+db.users.aggregate([{$project:{name:1,badges:1,points:1,_id:0}},{$unwind:"$points"},{$unwind:"$badges"},{$group:{_id:"$name",sumBonus:{$sum:"$points.bonus"}}},{$out:"coleccionsalida"}])
+
+
+counts:
+cuanta los docs de el ultimo stage ylo pone con alias que osostros le pongamos 
+
+
+db.users.aggregate([{$project:{name:1,badges:1,points:1,_id:0}},{$unwind:"$points"},{$unwind:"$badges"},{$group:{_id:"$name",sumBonus:{$sum:"$points.bonus"}}},{$count:"sha"}])
+
+
+ db.users.aggregate([{$project:{name:1,badges:1,_id:0}},{$unwind:"$badges"},{$group:{_id:"$badges",toTalType:{$sum:1}}}])
+
+

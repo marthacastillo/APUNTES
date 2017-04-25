@@ -1,0 +1,289 @@
+
+db.users.createIndex( {"createdAt": 1 }, {expireAfterSeconds: 604800})
+
+
+
+
+db.users.insertMany(
+  [
+     {
+       _id: 1,
+      "createdAt": new Date(),
+       name: "sue",
+       age: 19,
+       type: 1,
+       status: "P",
+       favorites: { artist: "Picasso", food: "pizza" },
+       finished: [ 17, 3 ],
+       badges: [ "blue", "black" ],
+       points: [
+          { points: 85, bonus: 20 },
+          { points: 85, bonus: 10 }
+       ]
+     },
+     {
+       _id: 2,
+       "createdAt": new Date(),
+       name: "bob",
+       age: 42,
+       type: 1,
+       status: "A",
+       favorites: { artist: "Miro", food: "meringue" },
+       finished: [ 11, 25 ],
+       badges: [ "green" ],
+       points: [
+          { points: 85, bonus: 20 },
+          { points: 64, bonus: 12 }
+       ]
+     },
+     {
+       _id: 3,
+       "createdAt": new Date(),
+       name: "ahn",
+       age: 22,
+       type: 2,
+       status: "A",
+       favorites: { artist: "Cassatt", food: "cake" },
+       finished: [ 6 ],
+       badges: [ "blue", "red" ],
+       points: [
+          { points: 81, bonus: 8 },
+          { points: 55, bonus: 20 }
+       ]
+     },
+     {
+       _id: 4,
+       "createdAt": new Date(),
+       name: "xi",
+       age: 34,
+       type: 2,
+       status: "D",
+       favorites: { artist: "Chagall", food: "chocolate" },
+       finished: [ 5, 11 ],
+       badges: [ "red", "black" ],
+       points: [
+          { points: 53, bonus: 15 },
+          { points: 51, bonus: 15 }
+       ]
+     },
+     {
+       _id: 5,
+       "createdAt": new Date(),
+       name: "xyz",
+       age: 23,
+       type: 2,
+       status: "D",
+       favorites: { artist: "Noguchi", food: "nougat" },
+       finished: [ 14, 6 ],
+       badges: [ "orange" ],
+       points: [
+          { points: 71, bonus: 20 }
+       ]
+     },
+     {
+       _id: 6,
+       "createdAt": new Date(),
+       name: "abc",
+       age: 43,
+       type: 1,
+       status: "A",
+       favorites: { food: "pizza", artist: "Picasso" },
+       finished: [ 18, 12 ],
+       badges: [ "black", "blue" ],
+       points: [
+          { points: 78, bonus: 8 },
+          { points: 57, bonus: 7 }
+       ]
+     },
+     {
+       _id: 7,
+       "createdAt": new Date(),
+       name: "Martha",
+       age: 23,
+       type: 2,
+       status: "B",
+       favorites: { food: "tacos", artist: "Leonardo" },
+       finished: [ 18, 12 ],
+       badges: [ "black", "blue", "yellow", "orange" , "silver"  ],
+       points: [
+          { points: 78, bonus: 8 },
+          { points: 57, bonus: 7 },
+          { points: 67, bonus: 9 },
+          { points: 87, bonus: 10 },
+          { points: 97, bonus: 20 }
+       ]
+     },
+     {
+       _id: 8,
+       "createdAt": new Date(),
+       name: "Carlos",
+       age: 34,
+       type: 1,
+       status: "A",
+       favorites: { food: "chips", artist: "Diego Rivera" },
+       finished: [ 18, 12 ],
+       badges: [ "black", "blue" , "white", "gray" ,"navy blue" ],
+       points: [
+          { points: 78, bonus: 8 },
+          { points: 57, bonus: 7 },
+          { points: 67, bonus: 9 },
+          { points: 87, bonus: 10 },
+          { points: 97, bonus: 20 }
+       ]
+     },
+     {
+       _id: 9,
+       "createdAt": new Date(),
+       name: "Maria",
+       age: 28,
+       type: 2,
+       status: "D",
+       favorites: { food: "enchiladas", artist: "Picasso" },
+       finished: [ 18, 12 ],
+       badges: [ "black", "blue", "orange", "fucsia","pink" ],
+       points: [
+          { points: 78, bonus: 8 },
+          { points: 57, bonus: 7 },
+          { points: 67, bonus: 9 },
+          { points: 87, bonus: 10 },
+          { points: 97, bonus: 20 }
+       ]
+     },
+     {
+       _id: 10,
+       name: "Lenardo",
+       "createdAt": new Date(),
+       age: 50,
+       type: 2,
+       status: "B",
+       favorites: { food: "tacos", artist: "The Whekend" },
+       finished: [ 18, 12 ],
+       badges: [ "black", "blue", "red", "green", "magenta" ],
+       points: [
+          { points: 78, bonus: 8 },
+          { points: 57, bonus: 7 },
+          { points: 67, bonus: 9 },
+          { points: 87, bonus: 10 },
+          { points: 97, bonus: 20 }
+       ]
+     }
+  ]
+)
+
+
+
+
+
+db.users.insertMany(
+  [
+     {
+       _id: 11,
+       "createdAt": new Date(),
+       name: "Mari",
+       age: 19,
+       type: 2,
+       status: "J",
+       favorites: { artist: "Leon", food: "Tacos" },
+       finished: [ 17, 3 ],
+       badges: [ "blue", "black" ,"orange", "blue", "pink" ],
+       points: [
+          { points: 85, bonus: 20 },
+          { points: 80, bonus: 15 },
+          { points: 75, bonus: 10 },
+          { points: 65, bonus: 12 },
+          { points: 55, bonus: 9 }
+       ]
+     },
+     {
+       _id: 12,
+       name: "Javier",
+       "createdAt": new Date(),
+       age: 21,
+       type: 2,
+       status: "C",
+       favorites: { artist: "Alfredo", food: "Hot-dogs" },
+       finished: [ 11, 25 ],
+       badges: [ "green" , "blue" , "brown", "fucsia"],
+       points: [
+          { points: 85, bonus: 20 },
+          { points: 80, bonus: 15 },
+          { points: 75, bonus: 10 },
+          { points: 65, bonus: 12 },
+          { points: 55, bonus: 9 }
+       ]
+     },
+     {
+       _id: 13,
+       "createdAt": new Date(),
+       name: "Ismael",
+       age: 24,
+       type: 3,
+       status: "B",
+       favorites: { artist: "Diego", food: "Chips" },
+       finished: [ 6 ],
+       badges: [ "blue", "red" , "yellow","pink", "navy blue" ],
+       points: [
+          { points: 85, bonus: 20 },
+          { points: 80, bonus: 15 },
+          { points: 75, bonus: 10 },
+          { points: 65, bonus: 12 },
+          { points: 55, bonus: 9 }
+       ]
+     },
+     {
+       _id: 14,
+       "createdAt": new Date(),
+       name: "Oscar",
+       age: 44,
+       type: 3,
+       status: "F",
+       favorites: { artist: "Porta", food: "chocolate" },
+       finished: [ 5, 11 ],
+       badges: [ "red", "black", "gray", "pink","magenta"],
+       points: [
+          { points: 85, bonus: 20 },
+          { points: 80, bonus: 15 },
+          { points: 75, bonus: 10 },
+          { points: 65, bonus: 12 },
+          { points: 55, bonus: 9 }
+       ]
+     },
+     {
+       _id: 15,
+       "createdAt": new Date(),
+       name: "Gaby",
+       age: 23,
+       type: 2,
+       status: "D",
+       favorites: { artist: "Paquita", food: "Nuguets" },
+       finished: [ 14, 6 ],
+       badges: [ "orange","silver","golden","pink","red" ],
+       points: [
+          { points: 85, bonus: 20 },
+          { points: 80, bonus: 15 },
+          { points: 75, bonus: 10 },
+          { points: 65, bonus: 12 },
+          { points: 55, bonus: 9 }
+       ]
+     },
+     {
+       _id: 16,
+       "createdAt": new Date(),
+       name: "Amalia",
+       age: 43,
+       type: 1,
+       status: "A",
+       favorites: { food: "Hamburgesa", artist: "Luis Miguel" },
+       finished: [ 18, 12 ],
+       badges: [ "black", "blue", "orange", "silver", "red"],
+       points: [
+          { points: 85, bonus: 20 },
+          { points: 80, bonus: 15 },
+          { points: 75, bonus: 10 },
+          { points: 65, bonus: 12 },
+          { points: 55, bonus: 9 }
+       ]
+     }
+  ]
+)
+

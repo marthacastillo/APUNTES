@@ -1,0 +1,16 @@
+MOSTRAR EL NOMBRE DEL ESTUDIANTE, EDAD, LA DIRECCION DE LOS DOCMENTOS QUE TENGAN COLOR RED Y GREEN, ADEMAS  accounts este entre 4 y7
+
+db.students.find({colors:{$all:["red","green"]}},{accounts:{$elemMatch:{$gte:4,$lte:7}},name:1,age:1,dir:1,_id:0})
+
+MOSTRAR EL NOMBRE DEL ESTUDIANTE, NOMBRE DE LA MASCOTA, EDAD Y EDAD DEL ESTUDIANTE  DONDE LA EDAD DE LA MASCOTA ESTE ENTRE 1 Y 2 AÑOS, ADMAS LA EDAD DEL DUEÑA ESTE ENTRE 20 Y 30 AÑOS ORDENANDOLO DE MAYOR A MENOR
+
+db.students.find({'pets.age':{$gte:1,$lte:2},age:{$gte:20,$lte:30}},{name:1,'pets.name':1,'pets.age':1, age:1}).sort({age:-1})
+
+
+MOSTRAR LA ESPECIE DE LA MASCOTA, EDAD DE LA MASCOTA SOLO DE LA ESPECIE CAT Y QUE LA EDAD  DE LA MASCOTA SEA MAYOR O IGUAL A 2, ADEMAS LA EDAD DEL DUEÑO ESTE ENTRE 20 Y 22 AÑOS 
+ 
+ db.students.find({'pets.especie':{$eq:'cat'},'pets.age':{$gte:2},age:{$gte:20,$lte:22}},{'pets.especie':1,'pets.age':1,age:1,_id:0})
+
+ {pets:{$size:2}},{age:{$gt:25}}
+
+

@@ -1,0 +1,5 @@
+curl -XGET 'search-beevagrad-yzavdnk3vgybj33teqgucq7ray.us-east-1.es.amazonaws.com/_all'
+
+curl -XGET 'search-beevagrad-yzavdnk3vgybj33teqgucq7ray.us-east-1.es.amazonaws.com/_all/_search?pretty'
+
+docker pull docker.elastic.co/elasticsearch/elasticsearch:5.3.1

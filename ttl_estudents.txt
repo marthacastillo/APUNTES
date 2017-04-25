@@ -1,0 +1,135 @@
+db.students.createIndex( {"createdAt": 1 }, {expireAfterSeconds: 120})
+
+
+db.students.insert([
+{"createdAt": new Date(),name:'Leonardo',
+age:21,
+dir:'CALLE AGUSTIN LARA NO. 69-B',
+colors:['red','blue','gray','pink'], 
+accounts:[1,2,3,4],
+pets:[
+{
+name:'cooper',
+especie:'cat',
+raza:'pit bul',
+age:2
+}]
+},
+{"createdAt": new Date(),name:'Leonor',
+age:24,
+dir:'OTE 6 #293 EDO MEX ',
+colors:['red','green','yellow','black'], 
+accounts:[5,6,7,8,9],
+pets:[
+{
+name:'becky',
+especie:'dog',
+raza:'pug',
+age:1
+}]
+},
+{"createdAt": new Date(),name:'Alicia',
+age:20,
+dir:'AV. INDEPENDENCIA NO. 241',
+colors:['silver','green','brown','black'], 
+accounts:[10,11,13,11],
+pets:[
+{
+name:'canela',
+especie:'cat',
+raza:'bengali',
+age:3
+}]
+},
+{"createdAt": new Date(),name:'Skyler',
+age:25,
+dir:'AV. 20 DE NOVIEMBRE NO.102',
+colors:['golden','viloet','brown','black'], 
+accounts:[1,4,8,9],
+pets:[
+{
+name:'tastie',
+especie:'dog',
+raza:'beagle',
+age:2
+}]
+},
+{"createdAt": new Date(),name:'Selena',
+age:20,
+dir:'VD. BENITO JUAREZ NO. 1466-A',
+colors:['golden','viloet','brown','black'], 
+accounts:[1,4,8,9,3],
+pets:[
+{
+name:'youcan',
+especie:'dog',
+raza:'bichon maltes',
+age:6
+}]
+},
+{"createdAt": new Date(),name:'Erandeni',
+age:22,
+dir:'VD. BENITO JUAREZ NO. 1466-A',
+colors:['golden','viloet','brown','pink'], 
+accounts:[1,4,6,5,3],
+pets:[
+{
+name:'blue',
+especie:'cat',
+raza:'ameriacan curl',
+age:6
+}]
+},
+{"createdAt": new Date(),name:'Javier',
+age:30,
+dir:'CALLE OCAMPO NO 14',
+colors:['golden','viloet','brown','pink'], 
+accounts:[1,4,6,3,9],
+pets:[
+{
+name:'daisy',
+especie:'cat',
+raza:'angora turco',
+age:1
+}]
+},
+{"createdAt": new Date(),name:'Isaac',
+age:26,
+dir:'CALLE OCAMPO NO 14',
+colors:['golden','viloet','brown','pink','green'], 
+accounts:[1,4,6,3,10],
+pets:[
+{
+name:'goku',
+especie:'dog',
+raza:'doberman',
+age:3
+}]
+},
+{"createdAt": new Date(),name:'Alberto',
+age:20,
+dir:'BLVD. BENITO JUAREZ ESQ. 20 DE NOVIEMBRE S/N',
+colors:['golden','viloet','brown','black'], 
+accounts:[1,4,2,3,10],
+pets:[
+{
+name:'ayka',
+especie:'cat',
+raza:'bombay',
+age:2
+}]
+},
+{"createdAt": new Date(),name:'Jose',
+age:20,
+dir:'AV. INDEPENDENCIA NO 145',
+colors:['golden','viloet','green','black'], 
+accounts:[1,4,2,3,1],
+pets:[
+{
+name:'abba',
+especie:'dog',
+raza:'chow chow',
+age:1
+}]
+}
+])

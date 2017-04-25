@@ -1,0 +1,35 @@
+PYTHON
+pyhon 2.6 y 2.7  son deprecadas
+si se elige la 3 al meos se debe eligir la version 3
+INTERPRETES 
+CPYTHON DEFAULT EN LINUX
+
+dir para ver los metedos de un string 
+s
+dir(s)
+funciones def 
+
+PASS LO MENDO A LAMAR PERO NO HACE NADA
+
+
+
+#ITERABLE
+__ METOEDO MAGICO __
+METODO MAGICO NExt Y SE PUEDE RELIZAR UNA ITERACIÓN 
+
+#GENERA
+yeald no se calcula en memoria, es como un return
+
+
+#lambda:
+ construye objetos de funcion  
+ tiene 2 mneras de deginir fucniones lambda y def
+ la lambda se usa cuando 
+ a funcion es bastante simple----
+ 
+
+
+
+
+
+

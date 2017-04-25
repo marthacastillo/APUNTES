@@ -1,0 +1,38 @@
+CAMBIAR CONTRASEÑA DE UN USUARIOS
+ALTER USER usuario  with PASSWORD 'NUEVA_PASSWD'
+crear usuario 
+CREATE USER martha with password 'pass';
+borar BD
+DROP TABLE TABLENAME
+
+crear db y table
+CREATE DATABASE GRAD OWNER MARTHA
+
+CREATE TABLE users (id int , name character varying(100), age int, type int, status char, CONSTRAINT pk_idusers PRIMARY KEY(id));
+
+
+CREATE TABLE favorites(id_favorite serial , id_user int , artist character varying(100), food character varying(100), CONSTRAINT pk_idfavorite PRIMARY KEY(id_favorite), CONSTRAINT fk_favoritesuser FOREIGN KEY(id_user) REFERENCES users(id));
+
+
+CREATE TABLE  badges(id_badges serial, badges character varying(30), id_user int, CONSTRAINT pk_idbadges PRIMARY KEY(id_badges), CONSTRAINT fk_badgesusers FOREIGN KEY(id_user) REFERENCES users(id));
+
+ CREATE TABLE points(id_points serial, id_user int , ponts int , bonus int, CONSTRAINT pk_idpoints PRIMARY  KEY(id_points), CONSTRAINT fk_pointsusers FOREIGN KEY(id_user) REFERENCES users(id));
+
+
+
+ CREATE TABLE finished (id_finished serial, id_user int, finished int, CONSTRAINT pk_idfinished PRIMARY KEY(id_finished), CONSTRAINT fk_finisheduser FOREIGN KEY(id_user) REFERENCES users (id));
+
+DESPUES DE HABER CREADO LA TABLA
+ALTER TABLE ordenes
+  ADD CONSTRAINT fk_ordenes_productos FOREIGN KEY (id_producto)
+  REFERENCES productos (id_producto);
+
+
+
+
+
+
+select name,age,type,status,food,artist,finished,users.id as ID_USER , badges, points,bonus from users inner join favorites on id=id_user inner join finished on id=finished.id_user inner join badges on id=badges.id_user inner join points on id=points.id_user ;
+
+
+
