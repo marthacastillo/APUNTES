@@ -1,0 +1,38 @@
+use grad;
+show collections show tables
+
+sudo docker exec -it monguito bash
+mongo ip
+
+# Consultas
+--EL usuario con mas edad
+db.users.find({},{name:1, age:1, _id:0}).sort({age:-1}).limit(1)
+--Los nombres de los estudiantes con perros y el nombre de sus perros
+db.students.find({"pets.especie":"perro"}, {name:1,"pets.nombre":1, _id:0}).pretty()
+--Los nombres de los estudiantes con 2 mascotas y el nombre de estas
+db.students.find({pets:{$size:2}}, {name:1,"pets.nombre":1, _id:0}).pretty()
+
+--Agrupar por cantidad de points y ademas descomponer por points.
+db.users.aggregate([{$match:{age:{$gte:40}}},
+                    {$project:{name:1,points:1, _id:-1}},
+                    {$unwind:"$points"},
+                    {$group:{_id:"$name", max:{$max:"$points.points"}}}, 
+                    {$sort:{max:1}}])
+
+-Cantidad de usuarios por color
+db.users.aggregate([{$project:{name:1, badges:1, _id:0}},
+		    {$unwind:"$badges"}, 
+                    {$group:{_id:"$badges", cantidad:{$sum:1}} } ])
+
+--Total de finished por tipo
+db.users.aggregate([{$project:{type:1, finished:1, _id:0}},
+		    {$unwind:"$finished"},
+                    {$group:{_id:"$type", total:{$sum:"$finished"}, }} ])
+
+--Total de animales por persona
+db.students.aggregate([{$project:{name:1, pets:1, _id:0, age:1}},
+		    {$unwind:"$pets"},
+                    {$group:{_id:{"name":"$name","age":"$age"}, cantidad:{$sum:1}}}, 
+                    {$sort:{cantidad:-1}},
+		    {$limit:1}
+		   ])

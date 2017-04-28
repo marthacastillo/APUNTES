@@ -5,13 +5,13 @@ MONGO
 
 ##DOCKER
 
-docker run -it --link some-mongo:mongo --rm mongo sh -c 'exec mongo "$MONGO_PORT_27017_TCP_ADDR:$MONGO_PORT_27017_TCP_PORT/test"'
+sudo docker run -it --link martha-mongo:mongo --rm mongo sh -c 'exec mongo "$MONGO_PORT_27017_TCP_ADDR:$MONGO_PORT_27017_TCP_PORT/test"'
 
 net stat -nap | grep LISTEN #CREAR BASE
 use mybase
 db.mycoll.find({})
 db.mycollection.insert({field:'value'})
-db.mycollection.find({})#MAYOR O IGUAL A 20 ... GTE ...LT,LTE,GT,EQ
+db.mycollection.find({})#MAYOR O IGUAL A 20 ... GTE ...LT,LTE,GT,EQn
 db.usuarios.find({age:{$gte:20}})
 #BUSQUEDA CON Y
 db.usuarios.find({$and:[age:{$gte:20}}, {status:'z'}]})
@@ -89,3 +89,63 @@ db.users.aggregate([{$project:{name:1,badges:1,points:1,_id:0}},{$unwind:"$point
  db.users.aggregate([{$project:{name:1,badges:1,_id:0}},{$unwind:"$badges"},{$group:{_id:"$badges",toTalType:{$sum:1}}}])
 
 
+
+ db.tw.find({text:/^@/},{text:1}).pretty()
+
+
+The 
+$elemMatch operator matches documents that contain an array field with at least one element that matches all the specified query criteria.
+$nin que no este  dentro de los elemtos not in de un arreglo
+
+
+
+$ne selects the documents where the value of the field is not equal (i.e. !=) to the specified value. This includes documents that do not contain the field.
+#uso de or
+db.p.find({borough:"Bronx",$or:[{cuisine:"American"},{cuisine:"Chinese"}]},{}).pretty()
+
+db.p.find({$or:[{borough:"Staten"},{borough:"Queens"},{borough:"Bronxor Brooklyn"}]}).pretty()
+#uso de $ne
+
+db.p.find({cuisine:{$ne:"Chinees"},$or:[{name:/^Wil/}]},{name:1,cuisine:1}).pretty()
+db.p.find({'grades.grade':"A",'grades.score':9,'grades.date':ISODate("2014-09-16T00:00:00Z")}).pretty()
+
+$lt - ' $lte - ' $gte - '>='
+$ne - '!='
+$in - 'is in array'
+$nin - '! in array'
+###
+#MOSTRAR LOS PRIMEROS 3
+db.tw.find({},{}).sort({_id:-1}).limit(3).pretty()
+#MOSTAR LOS ULIMOS 3 TWS 
+db.tw.find({},{}).sort({_id:1}).limit(3).pretty()
+$OBTENER TODOS LOS TW QUE CONTENGAN LA PALABA BBVA O BANCOMER
+db.tw.find({$or:[{text:/.*BBVA/},{text:/.*BANCOMER/}]},{text:1}).pretty()
+
+
+#MUESTRA CUANTOS TW FUERON CEADOS EN CADA LENGUAJE
+db.tw.aggregate([{$group:{_id: "$lang", total:{$sum:1}}},{$sort:{total:-1}},{$project:{lenguaje:'$_id',_id:0,total:1}}])
+
+
+#TOTAL DE TW POR LA UBICACION DEL USUARIO DE MANERA ASCENDENTE
+
+db.tw.aggregate([{$match:{"user.location":{$ne:null}}},{$group:{_id: "$user.location",count: {$sum:1}}},{$sort:{count:-1}},{$project:{count:1, user_location:'$_id',_id:0}}])
+
+
+#TOTAL DE HASHTAGS QUE HA SIDO USADOS
+
+db.tw.aggregate([{$unwind: '$entities.hashtags'},{ $group: {_id: '$entities.hashtags.text',tagCount: {$sum: 1}}},{$project:{tagCount:1,hashtags:'$_id',_id:0}},{$sort:{tagCount:-1}}])
+
+#QUIIEN  HHA  PUUBLIACADO MAS TWEETS
+
+db.tw.aggregate([{$group:{_id:"$user.screen_name",total:{$sum:1}}},{$sort:{total:-1}},{$project:{nommbre:'$_id',_id:0,total:1}}])
+#twetsss  popularres
+
+
+
+
+
+db.tw.find({created_at:{$regex:".*2017-04-28.*"}},{created_at:1}).pretty()      .*hol[]
+db.tw.find({created_at:{$regex:".*2017-04-26.*"}},{created_at:1}).pretty()
+Los textos de aquellos tweets que tienen menos de 10 caracteres en su texto
+# DE 16 A 17
+db.tw.find({created_at:{$regex:'2017-04-28T1[(16)(17)].*'}}, {created_at:1})
