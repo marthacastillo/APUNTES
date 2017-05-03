@@ -1,0 +1,1018 @@
+    3  pwd 
+    4  ls -n /opt/localhostmrtha/home/administradorcito/prueba
+    5  sudo ls -n /opt/localhostmrtha/home/administradorcito/
+    6  cd ..
+    7  ls 
+    8  cd home/admninstradorcito
+    9  cd home/administradorcito
+   10  ls 
+   11  mkdir  pruebas
+   12  cd pruebas
+   13  ls -n /opt/localhostmrtha/home/administradorcito/pruebas
+   14  sudo ls -n /opt/localhostmrtha/home/administradorcito/pruebas
+   15  ls -n /opt/localhostmrtha/home/administradorcito/pruebas
+   16  ls
+   17  cd ..
+   18  cd opt/
+   19  cd opt
+   20  cd ..
+   21  ls 
+   22  cd ~
+   23  cd /
+   24  ls
+   25  cd opt
+   26  ls 
+   27  cd localhostmrtha/
+   28  ls - l
+   29  ls -l
+   30  sudo docker build martha_image .
+   31  sudo docker build -t martha_image .
+   32  sudo yum remove 693502eb7dfb
+   33  sudo docker ps -a
+   34  sudo docker rm f546eba3db080
+   35  sudo docker rm 546eba3db080
+   36  sudo docker rm cb5cdc866eb5
+   37  sudo docker rm 9b4d21785d05
+   38  sudo docker rm 1981515b28f4
+   39  sudo docker rm b2797c7d23ef
+   40  ls
+   41  sudo docker ps -a
+   42  sudo docker rm 62ddac43247c
+   43  sudo docker rm 7d4495c8cc8b
+   44  sudo docker rm a96dd342ada4
+   45  sudo docker ps -a
+   46  sudo docker rm 9e5743e68bc0
+   47  sudo docker rm efde5408e366
+   48  sudo docker rm 428c0ea93f83
+   49  sudo docker rm ca93b9d2691c
+   50  sudo docker rm 4ee4dc528add
+   51  sudo docker rm cc1d536b00b2
+   52  sudo docker ps -a
+   53  sudo docker rm 5e21800fcc5a
+   54  sudo docker rm 394468418c9f
+   55  sudo docker rm 3238b500b72a
+   56  sudo docker rm 85519ef60515
+   57  sudo docker rm 7fc584a93e03
+   58  sudo docker rm 11bc89ca7e20
+   59  sudo docker ps -a
+   60  sudo docker rm 67701ffd099c
+   61  sudo docker rm -f f45f8c4996bf
+   62  sudo docker rm -f a2f210c93563
+   63  sudo docker ps -a
+   64  ls
+   65  sudo docker build -t martha_imagen .
+   66  ls
+   67  sudo  vim Dockerfile 
+   68  sudo docker build -t martha_imagen .
+   69  sudo docker run -d -p 8090:80 -n martha_apache -v /opt/localhostmrtha:/var/www/html/ martha_imagen
+   70  sudo docker run -d -p 8090:80 --name=martha_apache -v /opt/localhostmrtha:/var/www/html/ martha_imagen
+   71  sudo docker ps -a
+   72  sudo docker exec -it martha_apache bash
+   73  sudo docker ps -a
+   74  sudo docker rm -f martha_apache
+   75  sudo docker run -d -p 8090:80 --name=martha_apache -v /opt/localhostmrtha:/var/www/html/ martha_imagen
+   76  sudo docker ps -a
+   77  sudo docker exec -it martha_apache bash
+   78  sudo docker run -d martha_imagen
+   79  sudo docker ps -a
+   80  sudo docker tag 34e618cc6c7c "Debia/apache" 
+   81  sudo docker tag 34e618cc6c7c martha/apache 
+   82  sudo docker images
+   83  sudo docker tag be8f97d22533  martha/apache 
+   84  sudo docker login
+   85  sudo docker images
+   86  sudo docker push be8f97d22533
+   87   docker push be8f97d22533
+   88  sudo  docker push be8f97d22533
+   89  docker push be8f97d22533
+   90  docker push be8f97d22533 
+   91  docker push martha/apache
+   92  sudo docker push martha/apache
+   93  sudo docker loging
+   94  sudo docker login
+   95  sudo docker push martha/apache
+   96  sudo docker  ps -a
+   97  sudo docker image
+   98  sudo docker images
+   99  sudo docker loging
+  100  sudo docker login
+  101  ls -l
+  102  sudo docker tag martha_image martha141192/debianapache:latest 
+  103  sudo docker login
+  104  sudo docker images
+  105  sudo docker tag martha_image martha141192/apache:latest 
+  106  sudo docker ps -a
+  107  sudo docker login
+  108  sudo docker tag martha_image martha141192/apache:latest
+  109  sudo docker tag martha_image be8f97d22533/apache:latest
+  110  sudo docker tag  be8f97d22533/apache:latest
+  111  sudo docker tag 
+  112  sudo docker tag  --help
+  113  sudo docker tag  --help Print usage
+  114  sudo docker tag martha_image be8f97d22533/apache:latest
+  115  sudo docker ps
+  116  sudo docker tag martha_apache martha141192/debianapache
+  117  sudo docker tag martha_apache martha141192/debianapache:latest
+  118  ls
+  119  sudo docker images
+  120  sudo docker push martha/apache
+  121  sudo docker login
+  122  sudo docker push martha/apache
+  123  sudo docker login
+  124  sudo docker push martha/apache
+  125  sudo docker tag martha/apache martha141192/debianapache
+  126  sudo docker push martha141192/debianapache
+  127  ls
+  128   vim pagina.html 
+  129  sudo doker ps
+  130  sudo docker ps -a
+  131  sudo docker exec -it martha_apache
+  132  sudo docker exec -it martha_apache bash
+  133  history
+  134  ls 
+  135  cd ..
+  136  ls -l
+  137  cd localhostmrtha/
+  138  ls -l
+  139  suo yum search ansible
+  140  sudo yum search ansible
+  141  sudo rpm -iUvh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
+  142  rpm -iUvh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-8.noarch.rpm
+  143  sudo yum install epel-release
+  144  sudo yum install ansible
+  145  ansible
+  146  ansible -m ping all
+  147  ansible -m ping servers
+  148  ls 
+  149  vim Dockerfile 
+  150  sudo 
+  151  ls
+  152  sudo vim Dockerfile 
+  153  ls 
+  154  sudo vim Dockerfile 
+  155  vim index.html
+  156  sudo docker ps -a
+  157  sudo docker build -t martha_apache .
+  158  vim pagina2.html 
+  159  vim Dockerfile 
+  160  vim pagina2.html 
+  161  ls 
+  162  sudo docker ps -a
+  163  sudo docker rm -f 9bc01d25eec6
+  164  sudo docker run -d -p 8090:80 -v /opt/localhostmrtha:/var/www/html martha141192/debianapache
+  165  ls 
+  166  vim pagina2.html 
+  167  vim pagina.html 
+  168  sudo docker ps -a
+  169  sudo docker martha141192/debianapache
+  170  sudo docker inspect  martha141192/debianapache
+  171  ls 
+  172  vim pagina2.html
+  173  sudo docker  ps -a
+  174  sudo docker exec -it grave_borg bash 
+  175  vim pagina2.html 
+  176  sudo docker ps -a
+  177  sudo docker exec -it grave_borg bash
+  178  sudo docker ps -a
+  179  sudo docker rm -f 9777265349ea
+  180  sudo docker run --name=prueba_clase -p 8090:80 -d -v /opt/localhostmrtha/:/var/www/html martha141192/debianapache
+  181  sudo docker inspect prueba_clase
+  182  sudo docker exec -it prueba_clase bash
+  183  startx
+  184  cd ..
+  185  s 
+  186  cd ..
+  187  ls
+  188  cd var 
+  189  ls 
+  190  cd www
+  191  ls 
+  192  cd html
+  193  ls 
+  194  vim prueba.html
+  195  sudo vim prueba.html
+  196  sudo systemctl status https
+  197  sudo systemctl status httpd
+  198  sudo systemctl start httpd
+  199  ls
+  200  vim prueba.html 
+  201  vim prueba.js
+  202  $ wget http://c758482.r82.cf2.rackcdn.com/sublime_text_3_build_3065_x64.tar.bz2
+  203  sudo  wget http://c758482.r82.cf2.rackcdn.com/sublime_text_3_build_3065_x64.tar.bz2
+  204   sudo tar -vxjf sublime_text_3_build_3065_x64.tar.bz2 -C /opt
+  205  # sudo ln -s /opt/sublime_text_3/sublime_text /usr/bin/sublime3
+  206  sudo sublime3 /usr/share/applications/sublime3.desktop
+  207  sudo sublime3
+  208  cd ..
+  209  c..
+  210  cd ..
+  211   sublime3
+  212  cd ..
+  213  cd ./
+  214  cd ..7
+  215  cd ../
+  216  ls 
+  217  ls -l
+  218  sudo sublime3
+  219  sublime3
+  220  sudo docker loging
+  221  sudo docker login
+  222  sudo systemctl start docker 
+  223  sudo docker login
+  224  sudo docker ps -a
+  225  sudo docker imagen
+  226  sudo docker images
+  227  sudo docker rm -f martha141192/debianapache
+  228  sudo docker rm -f be8f97d22533
+  229  cd opt
+  230  cd /opt
+  231  ls 
+  232  mkdir apache
+  233  ls
+  234  chown administradorcito:administradorcito apache
+  235  ls -l
+  236  la -l
+  237  vim index.html
+  238  cd ..
+  239  ls 
+  240  ls -l
+  241  cd opt
+  242  ls
+  243  cd localhostmrtha/
+  244  ls
+  245  pagina
+  246  vim pagina.html 
+  247  vim Dockerfile 
+  248  cd ..
+  249  ls 
+  250  cd apache/
+  251  ls 
+  252  vim Dockerfile
+  253  cd ..
+  254  ls 
+  255  cd localhostmrtha/
+  256  ls -l
+  257  vim Dockerfile 
+  258  cd ..
+  259  ls 
+  260  cd apache/
+  261  ls
+  262  vim Docerfile
+  263  vim  Dockerfile
+  264  ls
+  265  index.html
+  266  vim index.html
+  267  sudo docker build -t martha_image .
+  268  cd ..
+  269  ls -l
+  270  ls
+  271  cd proc
+  272  ls
+  273  cd ..
+  274  ls
+  275  cd home
+  276  ls
+  277  /
+  278  cd /
+  279  ls 
+  280  mkdir destino
+  281  cd opt/
+  282  ld
+  283  ls
+  284  mkdir destino
+  285  ls -
+  286  ls -l
+  287  cd apache/
+  288  ls -l
+  289  pwd
+  290  ln -s /opt/apache
+  291  ln -s /opt/apache /opt/destino
+  292  ls l
+  293  ls -l
+  294  sudo docker run -d -p 8090:80 -v /opt/apache
+  295  hystori
+  296  history
+  297  sudo docker build -t tarea_image .
+  298  sudo docker run -d -p 8090:80 --name= apache_image -v /opt/apache:/var/www/html tarea_image
+  299  sudo docker run -d -p 8090:80 --name= apachem -v /opt/apache:/var/www/html tarea_image
+  300  sudo docker run -d --name= apachem -p 8090:80  -v /opt/apache:/var/www/html tarea_image
+  301  sudo docker run -d --name=apachem -p 8090:80  -v /opt/apache:/var/www/html tarea_image
+  302  ls -l
+  303  sudo docker exec -it apachem bash
+  304  sudo docker ps -a
+  305  sudo docker images
+  306  sudo docker rmi martha_image
+  307  sudo docker rmi martha141192/debianapache
+  308  sudo docker rmi martha/apache
+  309  sudo docker images
+  310  sudo docker rmi martha_apache
+  311  sudo docker rmi image_martha
+  312  sudo docker rmi martha_apache
+  313  sudo docker images
+  314  sudo docker rmi martha_imagen
+  315  sudo docker ps -a
+  316  sudo docker rm -f 34e618cc6c7c
+  317  sudo docker ps -a
+  318  sudo docker images
+  319  sudo docker rm -f martha_imagen
+  320  sudo docker rmi martha_imagen
+  321  sudo docker ps -a
+  322  sudo docker rmi martha_imagen
+  323  cd ..
+  324  ls 
+  325  cd opt/
+  326  ls 
+  327  cd apache/
+  328  ls
+  329  vim Dockerfile 
+  330  cd ..
+  331  ls 
+  332  cd localhostmrtha/
+  333  ls 
+  334  vim Dockerfile 
+  335  cd ..
+  336  ls 
+  337  cd apache/
+  338  ls 
+  339  vim Dockerfile 
+  340  vim index.html 
+  341  vim Dockerfile 
+  342  sudo docker build -t image_tarea .
+  343  sudo docker ps -a
+  344  sudo docker image
+  345  cd 
+  346  ls -l
+  347  cd ..
+  348  ls 
+  349  cd /
+  350  ls 
+  351  ls -l
+  352  cd opt/
+  353  ls 
+  354  ls -l
+  355  cd apache/
+  356  ls -l
+  357  chmod 777 index.html 
+  358  ls
+  359  chmod 777  Dockefile
+  360  chmod 777  Dockerfile
+  361  ls -l
+  362  pwd
+  363  ls -l
+  364  sublime3 index.html 
+  365  sudo sublime3 index.html 
+  366  cd Descargas/
+  367  wget http://c758482.r82.cf2.rackcdn.com/sublime_text_3_build_3065_x64.tar.bz2
+  368   sudo tar -vxjf sublime_text_3_build_3065_x64.tar.bz2 -C /opt
+  369   ln -s /opt/sublime_text_3/sublime_text /usr/bin/sublime3
+  370  sudo ln -s /opt/sublime_text_3/sublime_text /usr/bin/sublime3
+  371  sublime3
+  372   sudo sublime3 /usr/share/applications/sublime3.desktop
+  373  cd ..
+  374  ls 
+  375  cd /
+  376  ls 
+  377  cd var/www/html
+  378  ls
+  379  sudo sublime3 prueba.js
+  380  rmdir sublime_text_3_build_3065_x64.tar.bz2
+  381  rmdir sublime_text_3_build_3065_x64.tar.bz2
+  382  sudo rm sublime_text_3_build_3065_x64.tar.bz2
+  383  ls
+  384  startx
+  385  sudo curl 10.110.70.157:9200
+  386  sudo docker prueba_martha inspect
+  387  sudo docker  inspect prueba_inspect
+  388  sudo docker  inspect prueba_martha
+  389  curl 172.17.0.2:80
+  390  ls -l
+  391  vim requirements.txt 
+  392  ls -l
+  393  vim test2.py 
+  394  vim requirements.txt 
+  395  sudo curl 10.110.70.11:80
+  396  sudo docker ps -a
+  397  ls-l
+  398  ls -l
+  399  vim Dockerfile 
+  400  sudo docker ps -a
+  401  sudo systemctl start httpd
+  402  cd 
+  403  ls 
+  404  ls -l
+  405  cd sharing/
+  406  ls -l
+  407  cd Bank_sentiment_analysis/
+  408  LS -L
+  409  ls -l
+  410  source env/bin/activate
+  411  which python --version
+  412  which python -version
+  413  which python --version
+  414  pip install appdirs
+  415  deactivate
+  416  which ptthon3.6
+  417  which python3.6
+  418  source env/bin/activate
+  419  ls
+  420  pip install appdirs
+  421  sudo pip install appdirs
+  422  freez
+  423  sudo pip install bleach
+  424  sudo pip install cycler
+  425  sudo pip install elasticsearch
+  426  sudo pip install entrypoint
+  427  sudo pip install entrypoints
+  428  sudo pip install html5lib
+  429  python --version
+  430  deactivate
+  431  ls -l
+  432  sudo vim test2.py 
+  433  source env/bin/activate
+  434  python  vim test2.py 
+  435  python  test2.py 
+  436  pip install ipywidgets
+  437  deactivate 
+  438  which python
+  439  which python3.6
+  440  source /bin/p
+  441  python3.6 -m venv env
+  442  which python
+  443  python --version
+  444  python3.6  venv env
+  445  python3.6 -m venv env
+  446  source env/bin/activate
+  447  python --version
+  448  pip install appdirs
+  449  sudo pip install appdirs
+  450  sudo pip install bleach
+  451  sudo pip install bleach 2.0.0
+  452  ls 
+  453  python test2.py
+  454  vim tweets_pos_clean.txt
+  455  ls -l
+  456  sudo doker iamges
+  457  sudo docker start docker 
+  458  sudo system start docker 
+  459  sudo systemctl start docker 
+  460  sudo systemctl status docker 
+  461  sudo docker images
+  462  sudo docker ps -a
+  463  sudo docker login 
+  464  sudo docker tag tarea_image martha141192/tarea
+  465  sudo docker push martha141192/tarea
+  466  sudo sublime3
+  467  cd sharing
+  468  sudo docker run -d --name=prueba_martha -v
+  469  ls -l
+  470  git clone https://github.com/Edu-Glez/Bank_sentiment_analysis
+  471  ls -l
+  472  cd Bank_sentiment_analysis/
+  473  ls -l
+  474  requirements
+  475  vim requirements.txt 
+  476  cd
+  477  ls 
+  478  cd /
+  479  ls -l
+  480  cd opt
+  481  ls 
+  482  cd apache/
+  483  ls -l
+  484  sudo docker images
+  485  sudo docker ps a
+  486  sudo docker ps -a
+  487  pwd
+  488  sudo docker run -d --name=prueba_martha  -v /opt/apache/:/var/www/html martha141192/tarea
+  489  sudo dcoker ps -a
+  490  sudo docker ps -a
+  491  curl 10.110.70.11:80
+  492  ifconfig p4p2
+  493  curl 10.110.70.11:80
+  494  sudo docker ps -a
+  495  sudo docker exec -it prueba_martha bash
+  496  sudo docker ps -a
+  497  sudo docker rm -f prueba_martha
+  498  sudo docker run -d --name=prueba_martha -p 8090:80  -v /opt/apache/:/var/www/html martha141192/tarea
+  499  vim index.html 
+  500  sudo docker ps -a
+  501  cd ..
+  502  ls 
+  503  sudo sublime3 data.json 
+  504  cd ..
+  505  ls 
+  506  cd ~
+  507  ls -l
+  508  cd sharing/
+  509  ls -l
+  510  cd Bank_sentiment_analysis/
+  511  ls -l
+  512  sudo sublime3 test.JSON
+  513  sudo systemctl start htppd
+  514  beeva2014
+  515  sudo systemctl status htppd
+  516  sudo systemctl status htpp
+  517  ls -l
+  518  cd /
+  519  ls 
+  520  cd var
+  521  ls 
+  522  cd www
+  523  ls -l
+  524  mkdir json
+  525  sudo mkdir json
+  526  ls
+  527  cd json
+  528  ls 
+  529  pwd
+  530  ls
+  531  sudo sublime3 index.html
+  532  pdw
+  533  pwd
+  534  ls -l
+  535  cd ..
+  536  ls -l
+  537  cp json var/www/html
+  538  ls
+  539  cd json/
+  540  ls
+  541  cd ..
+  542  cd html/
+  543  ls 
+  544  rm prueba.
+  545  rm prueba.html
+  546  sudo rm prueba.html
+  547  sudo rm prueba.js
+  548  mkdir json
+  549  sudo mkdir json
+  550  ls 
+  551  cd json/
+  552  pdw
+  553  pwd
+  554  cp var/www/json/index.html /var/www/html/json
+  555  cp var/www/json/index.html var/www/html/json
+  556  sudo cp var/www/json/index.html var/www/html/json
+  557  ls -l
+  558  cd ..
+  559  ls 
+  560  cd .
+  561  cd ..
+  562  ls 
+  563  cd ~
+  564  ls -l
+  565  cd Descargas
+  566  ls -l
+  567  sudo copy index.html /var/www/json
+  568  sudo cp index.html /var/www/json
+  569  ls
+  570  sudo cp datos.json  /var/www/json
+  571  sudo cp datos.json  /var/www/html/json
+  572  ls -l
+  573  sudo cp index.html  /var/www/html/json
+  574  sudo sublimetext
+  575  sudo sublime3
+  576  sudo systemctl start httpd
+  577  cd sharing/
+  578  ls 
+  579  vim Codebook.md
+  580  cd ..
+  581  ls 
+  582  Codebook.md
+  583  vim Codebook.md
+  584  gedit Codebook.md 
+  585  ls
+  586  cd Descargas/
+  587  ls -l
+  588  pwd
+  589  sudo chmod 777 example.sql
+  590  ls -l
+  591  cd ..
+  592  ls -l
+  593  sudo bash
+  594  cdopt
+  595  cd /opt
+  596  ls
+  597  expand example.txt > example_exapand.txt
+  598  ls
+  599  vim example_exapand.txt 
+  600  cd ..
+  601  ls
+  602  cd ~
+  603  ls -l
+  604  cd Descargas/
+  605  ls -l
+  606  unrar x sisep.rar 
+  607  sudo unrar x sisep.rar 
+  608  cd
+  609  sudo yum install unrar
+  610  sudo unrar x sisep.rar 
+  611  sudo yum install unrar
+  612  sudo yum search unrar
+  613  sudo yum search unar
+  614  sudo yum install rar unrar
+  615  sudo yum install  unrar
+  616  wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-6.noarch.rpm
+  617  yum install search  rar unrar
+  618  sudo yum install search  rar unrar
+  619  sudo yum install search  rar 
+  620  yum install rar unrar
+  621  sudo yum install rar unrar
+  622  wget http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm" >>
+  623  "rpm -Uvh rpmforge-release-0.5.3-1.el7.rf.x86_64
+  624  sudo wget http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm" >>
+  625  "rpm -Uvh rpmforge-release-0.5.3-1.el7.rf.x86_64
+  626  sudo systemctl start httpd
+  627  sudo wget http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm" >>
+  628  "rpm -Uvh rpmforge-release-0.5.3-1.el7.rf.x86_64
+  629  sudo wget http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm
+  630  sudo yum install rar 
+  631  sudo wget http://www.rarlab.com/rar/rarlinux-3.8.0.tar.gz
+  632  tar -zxvf rarlinux-3.8.0.tar.gz
+  633  cd rar
+  634  make
+  635  sudo make
+  636  sudo make install
+  637  exit
+  638  ls
+  639  gedit
+  640  gedit Codebook.md 
+  641  sudo systemctl stus postgre
+  642  sudo systemctl status postgre
+  643  sudo systemctl status postgres
+  644  sudo systemctl status postgresql
+  645  sudo systemctl start postgresql
+  646  sudo systemctl status postgresql
+  647  su postgres
+  648  su
+  649  sudo yum install rar 
+  650  sudo yum install rar  unrar
+  651  sudo yum install   unrar
+  652  sudo yum install rar
+  653  yum install rar unrar
+  654  sduo yum install rar unrar
+  655  suduo yum install rar unrar
+  656  sudo yum install rar unrar
+  657  sudo yum install rar 
+  658  cd rar
+  659  ls
+  660  vim readme.txt 
+  661  ls
+  662  vim Makefile 
+  663  sudo yum install rar 
+  664  sudo yum install rar unrar
+  665  yum install rar
+  666  sudo yum install rar
+  667  ./ unrar 
+  668  ./unrar 
+  669  sudo unrar x file.rar
+  670  ls -l
+  671  sudo yum install unrar
+  672  ls -l
+  673  yum install epel-release
+  674  sudo yum install epel-release
+  675  yum install unar
+  676  sudo yum install unar
+  677  cd 
+  678  ls
+  679  cd Descargas/
+  680  ls 
+  681  sudo unrar x sisep.rar 
+  682  sudo unar x sisep.rar 
+  683  sudo unar  sisep.rar 
+  684  cd 
+  685  ls
+  686  cd Descargas/
+  687  ls 
+  688  cd sisep
+  689  ls 
+  690  cd gra
+  691  cd Graficas/
+  692  ls 
+  693  cd
+  694  ls 
+  695  cd Descargas/
+  696  ls 
+  697  pwd
+  698  cd ..
+  699   ls -l
+  700  cd De
+  701  cd Descargas/
+  702  ls
+  703  ls -l
+  704  sudo chown administradorcito:administradorcito sisep
+  705  ls -l
+  706  chmod 777 sisep
+  707  ls -l
+  708  cd sisep/
+  709  ls -l
+  710  sudo chown administradorcito:administradorcito acentos
+  711  sudo chown administradorcito:administradorcito assets/
+  712  sudo chown administradorcito:administradorcito autocomplete/
+  713  sudo chown administradorcito:administradorcito Auto_suggestion/
+  714  sudo chown administradorcito:administradorcito calendario
+  715  sudo chown administradorcito:administradorcito calendario2
+  716  sudo chown administradorcito:administradorcito Captura/
+  717  ls -l
+  718  sudo chown administradorcito:administradorcito 404.html 
+  719  sudo chown administradorcito:administradorcito CargarDocumentos/
+  720  sudo chown administradorcito:administradorcito connect_db.php
+  721  sudo chown administradorcito:administradorcito connect_db.php~
+  722  sudo chown administradorcito:administradorcito Consultas/
+  723  sudo chown administradorcito:administradorcito cc
+  724  sudo chown administradorcito:administradorcito css/
+  725  sudo chown administradorcito:administradorcito ejemplo
+  726  sudo chown administradorcito:administradorcito ejemplo2
+  727  sudo chown administradorcito:administradorcito Graficas/
+  728  sudo chown administradorcito:administradorcito img
+  729  sudo chown administradorcito:administradorcito index2.php 
+  730  sudo chown administradorcito:administradorcito index.php 
+  731  sudo chown administradorcito:administradorcito Inhabilitado/
+  732  sudo chown administradorcito:administradorcito js
+  733  sudo chown administradorcito:administradorcito Layouts/
+  734  sudo chown administradorcito:administradorcito login/
+  735  sudo chown administradorcito:administradorcito MenuReportes
+  736  sudo chown administradorcito:administradorcito MenuReportes_e
+  737  sudo chown administradorcito:administradorcito Tabla_sabana/
+  738  sudo chown administradorcito:administradorcito tokenfield/
+  739  cd 
+  740  ls -l
+  741  sudo chown -R  administradorcito:administradorcito tokenfield/
+  742  cd Descargas/
+  743  ls -l
+  744  sudo chown -R  administradorcito:administradorcito sisep
+  745  sudo chomod 777 -R  administradorcito:administradorcito sisep
+  746  sudo chmod 777 -R  administradorcito:administradorcito sisep
+  747  sudo chmod 777 -R   sisep
+  748  ls -l
+  749  cd sisep/
+  750  k
+  751  ls -l
+  752  cd Graficas/
+  753  ls -l
+  754  cd /
+  755  ls 
+  756  cd var
+  757  ls 
+  758  cd www
+  759  ls 
+  760  cd html/
+  761  ls 
+  762  cd js
+  763  cd json/
+  764  ls -l
+  765  sublime3 
+  766  sudo sublime3 
+  767  cd ..
+  768  ls 
+  769  cd ~
+  770  ls 
+  771  cd Descargas/
+  772  ls -
+  773  ls -l
+  774  chmod 777 p.json 
+  775  ls -l
+  776  cp p.json /var/www/html/json
+  777  sudo cp p.json /var/www/html/json
+  778  sublime3 p.json
+  779  ls -l
+  780  sudo chmod index(1).html
+  781  mv index(1).html index2.html
+  782  sudo sublime3 index (1).html
+  783  sudo sublime3 index.html
+  784  ls
+  785  cd  PPPPPPRRRUUUUUEBAS\ DE\ HOOOOOY/
+  786  ls
+  787  ls -l
+  788  cd ..
+  789  cd 
+  790  ls -l
+  791  chmod 777 PPPPPPRRRUUUUUEBAS\ DE\ HOOOOOY/
+  792  ls -l
+  793  cd PPPPPPRRRUUUUUEBAS\ DE\ HOOOOOY/
+  794  ls -l
+  795  cd ..
+  796  chmod -R  777 PPPPPPRRRUUUUUEBAS\ DE\ HOOOOOY/
+  797  ls -l
+  798  cd PPPPPPRRRUUUUUEBAS\ DE\ HOOOOOY/
+  799  ls -l
+  800  cd proyectoTendencias/
+  801  ls -l
+  802  chmod -R  777 PPPPPPRRRUUUUUEBAS\ DE\ HOOOOOY/
+  803  chmod -R  777 pruebas/
+  804  ls -l
+  805  cd pruebas/
+  806  ls  -l
+  807  startx
+  808  staratx
+  809  startx
+  810  cd ls
+  811  cd ..
+  812  cd ...
+  813  cd .
+  814  cd ..
+  815  ls -l
+  816  cd ~
+  817  ls -l
+  818  cd Descargas/
+  819  ls -l
+  820  sudo chmod 777 andrea_prueba.json 
+  821  ls -l
+  822  cp andrea_prueba.json /var/www/json
+  823  sudo cp andrea_prueba.json /var/www/json
+  824  sudo cp andrea_prueba.json /var/www/html/json
+  825  sudo systemctl start https
+  826  sudo systemctl status https
+  827  sudo systemctl status httpd
+  828  sudo systemctl start httpd
+  829  cd var
+  830  cd /var
+  831  ls
+  832  cd www/
+  833  ls 
+  834  cd html/
+  835  ls 
+  836  cd json/
+  837  ls -l
+  838  cat index.html 
+  839  ls -l
+  840  sudo sublime3 desgloce.html 
+  841  ls 
+  842  pwd
+  843  ls -l
+  844  cd ..
+  845  cd /
+  846  ls 
+  847  cd ~
+  848  ls -l
+  849  cd sharing/
+  850  ls 
+  851  cd mvc
+  852  ls 
+  853  sudo git status 
+  854  git branch
+  855  git fetch
+  856  git commit -m "Ejemplo de MVC"
+  857  git add --all
+  858  git pi -m "Ejemplo de MVC"
+  859  git branch
+  860  sudo git status 
+  861  git push --all
+  862  ls -l
+  863  sudo free-m
+  864  sudo free -m
+  865  df -h
+  866  uname -a
+  867  free -m
+  868  cat /proc/meminfo
+  869  expr 3 +1
+  870  expr 3 + 1
+  871  expr 1024/60
+  872  expr 1024 / 60
+  873  expr 1024 / 40
+  874  ps -efa
+  875  ps -efa | psql
+  876  ps -efa | bash
+  877  sudo mkdir eli
+  878  cd var/www/html
+  879  cd var
+  880  ls -l
+  881  cd /
+  882  ls
+  883  cd var/www/html
+  884  ls 
+  885  sudo mkdir eli
+  886  ls
+  887  cd ..
+  888  cd exit
+  889  cd /
+  890  ls
+  891  cd var
+  892  cd html
+  893  cd www
+  894  ls
+  895  cd html/
+  896  ls -l
+  897  sudo chown administradorcito:administadorcito eli
+  898  sudo chown administradorcito:administradorcito eli
+  899  sudo chmod 777  administradorcito:administradorcito eli
+  900  sudo chmod 777 - R  eli
+  901  sudo chmod 777   eli
+  902  sudo systemctl satart httpd
+  903  sudo systemctl start httpd
+  904  cd /
+  905  ls
+  906  cd var/www/html
+  907  ls 
+  908  cd eli/
+  909  ls -l
+  910  cd Captura/
+  911  ls 
+  912  cd Estadisticas/
+  913  ls
+  914  cd Graficas/
+  915  ls -l
+  916  cd Estimaciones/
+  917  ls
+  918  cd ..
+  919  ls
+  920  cat index.php 
+  921  sudo systemctl status docker 
+  922  sudo systemctl start docker 
+  923  sudo systemctl status docker 
+  924  exit
+  925  exit
+  926  exit
+  927  exit
+  928  sudo docker pull sequenceiq/hadoop-docker
+  929  sudo docker ps -a
+  930  sudo docker imges
+  931  sudo docker images
+  932  sudo docker pull aarongdocker/hdfs
+  933  sudo docker run -it sequenceiq/hadoop-docker:latest /etc/bootstrap.sh -bash
+  934  sudo docker search hadoop
+  935  sudo docker search hdfs
+  936  docker run -it sequenceiq/hadoop-docker /etc/bootstrap.sh -bash
+  937  sudo docker run -it sequenceiq/hadoop-docker:latest -bash
+  938  ls /sys/class/backligth/
+  939  sudo ls /sys/class/backligth/
+  940  sudo ls /sys/class/backlight/
+  941   ls /sys/class/backlight/
+  942  sudo systemctl status docker
+  943  sudo docker images
+  944  sudo docker ps -a
+  945  sudo docker exec -it fervent_volhard
+  946  sudo docker exec  fervent_volhard -it 
+  947  sudo docker exec -it fervent_volhard
+  948  sudo docker exec -it fervent_volhard bash
+  949  startx
+  950  ls 
+  951  sudo docker run -it - sequenceiq/hadoop-docker
+  952  sudo docker images
+  953  docker run -it sequenceiq/hadoop-docker:latest /etc/bootstrap.sh -bash
+  954  sudo docker run -it sequenceiq/hadoop-docker:latest /etc/bootstrap.sh -bash
+  955  sudo docker run -it --name=prueba_hdfs -v /opt/prueba:/opt sequenceiq/hadoop-docker
+  956  sudo systemctl status docker
+  957  sudo systemctl start docker
+  958  sudo systemctl status docker
+  959  sudo  dockerps -a
+  960  sudo  docker ps -a
+  961  sudo  docker start fervent_volhard
+  962  sudo  docker ps -a
+  963  sudo docker exec -it fervent_volhard bash
+  964  sudo  dockerps -a
+  965  sudo docker exec -it prueb_hdfs
+  966  sudo docker exec -it prueb_hdfs bash
+  967  sudo docker exec -it prueba_hdfs bash
+  968  sudo docker exec -it prueb_hdfs bash
+  969  sudo docker exec -it prueba_hdfs bash
+  970  ls
+  971  ls -l
+  972  pwd
+  973  cd opt
+  974  cd /opt
+  975  ls 
+  976  mkdir prueba
+  977  cd prueba/
+  978  cd ..
+  979  ls -l
+  980  cd prueba/
+  981  ls 
+  982  sublime3 nombres
+  983  sublime3 direcciones
+  984  sublime3 peliculas
+  985  sudo docker ps -a
+  986  sudo docker rm -f  f0bf96c82302
+  987  sudo docker rm -f  e602fe2c83d1
+  988  sudo docker ps -a
+  989  sudo docker rm -f  5ecf9174ee68
+  990  sudo docker ps -a
+  991  pwd
+  992  sudo docker ps -a
+  993  sudo docker exec -it prueba_hdfs
+  994  sudo docker exec -it prueba_hdfs bash
+  995  sudo docker exec -it prueba_hdfs bash
+  996  ls 
+  997  pwd
+  998  sudo docker exec -it prueba_hdfs bash
+  999  history
+ 1000  hystori
+ 1001  history
+ 1002  history > historial.txt
+
+$HADOOP_PREFIX
+   55  BIbin/hdfs dfs -ls
+   56  bin/hdfs dfs -mkdir datos
+   57  bin/hdfs dfs -mkdir /opt
+   58  bin/hdfs dfs -mkdir /opt/base
+   59  bin/hdfs dfs -mkdir /opt/base/datos
+   60  bin/hdfs dfs -mkdir /opt/base/items
+   61  bin/hdfs dfs -copyFromLocal /opt/direcciones  /opt/base/datos/direcciones
+   62  bin/hdfs dfs -cat /opt/base/datos/direcciones
+   63*  /opt/base/items/peliculas
+   64  bin/hdfs dfs -cat  /opt/base/datos/items/peliculas
+   65  bin/hdfs dfs -cat  /opt/base/datos/items/peliculas
+   66  bin/hdfs dfs -copyFromLocal /opt/peliculas  /opt/base/items/peliculas
+   67  cat /opt/base/items/peliculas
+   68  bin/hdfs dfs -cat  /opt/base/items/peliculas
+   69  history
+
