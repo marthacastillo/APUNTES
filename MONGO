@@ -149,3 +149,28 @@ db.tw.find({created_at:{$regex:".*2017-04-26.*"}},{created_at:1}).pretty()
 Los textos de aquellos tweets que tienen menos de 10 caracteres en su texto
 # DE 16 A 17
 db.tw.find({created_at:{$regex:'2017-04-28T1[(16)(17)].*'}}, {created_at:1})
+
+If you specify a single query predicate in the $elemMatch expression, $elemMatch is not necessary.
+
+Name 	Description
+$all 	Matches arrays that contain all elements specified in the query.
+$elemMatch 	Selects documents if element in the array field matches all the specified $elemMatch conditions.
+$size 	Selects documents if the array field is a specified size.
+
+The $all is equivalent to an $and operation of the specified values; i.e. the following statement:
+
+{ tags: { $all: [ "ssl" , "security" ] } }
+
+
+{ $and: [ { tags: "ssl" }, { tags: "security" } ] }
+
+
+
+
+db.tw.find({"entities.hashtags":{$elemMatch:{text:"USA", indices:{$lte:0,$gte:4}}}})
+
+mask rwx, permiso maximos qu  puede tener un directorio
+solo super user o propetario puede cambiar los permisos
+
+db.tw.find({"entities.hashtags.text":{$all:["USA", "Mexico"]}})
+
